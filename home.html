@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Home</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .mapouter {
+        position: relative;
+        text-align: right;
+        height: 1500px;
+        width: 500px;
+      }
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 550px;
+        width: 1500px;
+      }
+
+      textarea {
+            float: right;
+            border: 1px solid #000000;
+            width: 300px;
+            height: 550px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="camera.html">Live Broadcast</a></li>
+        <li id="login"><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <iframe
+      width="1200"
+      height="550"
+      src="http://google.org/crisismap/weather_and_events?hl=en&llbox=57.84%2C7.69%2C-25.35%2C-160.35&t=TERRAIN&layers=30%2C1%2C31%2C32%2C20%2C12%2Clayer9%2C2&embedded=true"
+      style="border: 1px solid #ccc"
+    ></iframe>
+
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Chat</h1>
+
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message..." name="msg" required></textarea>
+
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">
+          Close
+        </button>
+      </form>
+    </div>
+
+    <textarea rows="50" cols="5"></textarea>
+
+    <script>
+      function openForm() {
+        document.getElementByID('myForm').style.display = 'block';
+      }
+      function closeForm() {
+        document.getElementByID('myForm').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
